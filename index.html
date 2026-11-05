@@ -3,14 +3,15 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Wesley Okoye — Software Engineer</title>
-<meta name="description" content="Wesley Okoye — software engineer building data pipelines, AI automation, and backend services. Projects in Python, FastAPI, Redis, Snowflake, n8n, OpenAI, and Android." />
+<title>Wesley Okoye | Software Engineer</title>
+<meta name="description" content="Wesley Okoye. Software engineer building data pipelines, AI automation and backend systems. Python, FastAPI, Redis, Snowflake, n8n, OpenAI and Android." />
 
-<meta property="og:title" content="Wesley Okoye — Software Engineer" />
-<meta property="og:description" content="Data pipelines, AI automation, and backend services built for real-world constraints." />
+<meta property="og:title" content="Wesley Okoye | Software Engineer" />
+<meta property="og:description" content="Data pipelines, AI automation and backend systems built for real operations." />
 <meta property="og:type" content="website" />
+<meta property="og:image" content="assets/wesley.jpg" />
 
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%2310b981'/%3E%3Ctext x='50' y='68' font-size='58' font-family='monospace' fill='%23061412' text-anchor='middle'%3EW%3C/text%3E%3C/svg%3E" />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%23e2932f'/%3E%3Ctext x='50' y='68' font-size='58' font-family='monospace' fill='%231a1206' text-anchor='middle'%3EW%3C/text%3E%3C/svg%3E" />
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -24,13 +25,12 @@
 
 <header class="nav" id="top">
   <div class="nav-inner">
-    <a href="#top" class="brand">WO<span class="brand-dot">.</span></a>
+    <a href="#top" class="brand">Wesley Okoye</a>
     <nav class="nav-links" id="navLinks">
       <a href="#work">Work</a>
+      <a href="#stack">Stack</a>
       <a href="#about">About</a>
-      <a href="#skills">Skills</a>
       <a href="#contact">Contact</a>
-      <a class="btn btn-ghost nav-cta" href="mailto:wesleyokoye@gmail.com">Say hello</a>
     </nav>
     <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="navLinks">
       <span></span><span></span><span></span>
@@ -42,265 +42,205 @@
 
   <section class="hero">
     <div class="hero-inner">
-      <p class="eyebrow">Software Engineer — Data &amp; Automation</p>
-      <h1>Wesley Okoye</h1>
-      <p class="hero-lede">
-        I build systems for the messy edges of real operations — unattended IoT pipelines that
-        can't rely on a server staying up, spreadsheet-driven workflows standing in for missing
-        tooling, and backend services engineered to degrade gracefully when a dependency fails
-        instead of taking everything down with it.
-      </p>
-      <div class="hero-actions">
-        <a class="btn btn-primary" href="#work">View projects</a>
-        <a class="btn btn-ghost" href="https://github.com/greatwes" target="_blank" rel="noopener">GitHub ↗</a>
+      <div class="hero-copy">
+        <p class="eyebrow">Software engineer, data &amp; automation</p>
+        <h1>Hi, I'm Wesley.</h1>
+        <p class="hero-lede">
+          I build the systems that keep running when nobody's watching them: biometric attendance
+          pipelines, payment reconciliation, AI hiring flows. Most of what I ship is the kind of
+          work that only gets noticed when it breaks, so I try hard to make sure it doesn't.
+        </p>
+        <p class="hero-note">Open to new opportunities.</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#work">See my work</a>
+          <a class="btn btn-ghost" href="#contact">Get in touch</a>
+        </div>
       </div>
-      <div class="hero-stats">
-        <div class="stat"><span class="stat-num">8</span><span class="stat-label">shipped systems</span></div>
-        <div class="stat"><span class="stat-num">300+</span><span class="stat-label">automated tests written</span></div>
-        <div class="stat"><span class="stat-num">0</span><span class="stat-label">single points of failure left on purpose</span></div>
+      <div class="hero-photo">
+        <img src="assets/wesley.jpg" alt="Portrait of Wesley Okoye" width="899" height="1166" />
+      </div>
+    </div>
+    <div class="hero-stats">
+      <div class="stat"><span class="stat-num">8</span><span class="stat-label">systems in production</span></div>
+      <div class="stat"><span class="stat-num">300+</span><span class="stat-label">tests written, not just code shipped</span></div>
+      <div class="stat"><span class="stat-num">0</span><span class="stat-label">single points of failure left on purpose</span></div>
+    </div>
+  </section>
+
+  <section class="section" id="about">
+    <div class="section-inner about-inner">
+      <h2 class="section-title">The background.</h2>
+      <div class="about-copy">
+        <p>
+          I didn't start out building payment reconciliation systems or AI recruiting pipelines.
+          Most of my work starts the same way: someone on a team is stuck doing something by hand
+          that shouldn't need a person at all. A spreadsheet standing in for a database. A
+          biometric terminal with no way to talk to the rest of the company's systems. A hiring
+          process that depends on someone reading every resume one at a time.
+        </p>
+        <p>
+          I find that gap and build something that closes it properly: tested, resistant to being
+          run twice by accident, and honest in the README about what it still can't do.
+        </p>
+        <p>
+          Most of what I build runs quietly for teams that will never read the code, which is
+          kind of the point. The projects below are the ones I can actually show.
+        </p>
       </div>
     </div>
   </section>
 
-  <section class="section" id="work">
+  <section class="section marquee-section" id="stack">
     <div class="section-inner">
-      <h2 class="section-title"><span class="kicker">01</span> Selected work</h2>
-      <p class="section-sub">A rate limiter designed like a systems-design interview answer, an unattended biometric pipeline, an AI recruiting funnel, a signature-verified payment reconciler, a scoped MCP server, and automations built to fail loudly instead of silently.</p>
+      <h2 class="section-title">Tools I build with.</h2>
+      <p class="section-sub">The languages, platforms and APIs behind most of what's below.</p>
+    </div>
+    <div class="marquee" data-speed="slow">
+      <div class="marquee-track">
+        <span>Python</span><span>FastAPI</span><span>Redis</span><span>PostgreSQL</span>
+        <span>TimescaleDB</span><span>Docker</span><span>n8n</span><span>Snowflake</span>
+        <span>Dataiku</span><span>Kotlin</span><span>Android</span>
+        <span>Python</span><span>FastAPI</span><span>Redis</span><span>PostgreSQL</span>
+        <span>TimescaleDB</span><span>Docker</span><span>n8n</span><span>Snowflake</span>
+        <span>Dataiku</span><span>Kotlin</span><span>Android</span>
+      </div>
+    </div>
+    <div class="marquee marquee-reverse" data-speed="slow">
+      <div class="marquee-track">
+        <span>OpenAI</span><span>Vapi</span><span>Google Apps Script</span><span>Airtable</span>
+        <span>KoBoToolbox</span><span>Gmail API</span><span>Google Sheets</span>
+        <span>Prometheus</span><span>Grafana</span><span>MCP</span>
+        <span>OpenAI</span><span>Vapi</span><span>Google Apps Script</span><span>Airtable</span>
+        <span>KoBoToolbox</span><span>Gmail API</span><span>Google Sheets</span>
+        <span>Prometheus</span><span>Grafana</span><span>MCP</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-alt" id="work">
+    <div class="section-inner">
+      <h2 class="section-title">Things I've built.</h2>
+      <p class="section-sub">Eight systems, all running the way they're described below. Source is public for every one of them.</p>
+
+      <article class="feature-card">
+        <span class="tag">AI · Recruiting</span>
+        <h3>I built a hiring funnel where an AI screens the resume, interviews the candidate by voice, and picks the shortlist.</h3>
+        <p>
+          A candidate applies, an LLM scores their resume against the job description, and if
+          they pass, a voice AI agent calls them for a short screening interview. A second LLM
+          evaluates the transcript, and a third compares every remaining candidate head to head
+          to pick the best ones, not just the highest scorers in isolation.
+        </p>
+        <div class="chip-row">
+          <span class="chip">3 LLM stages</span>
+          <span class="chip">Voice interviews via Vapi</span>
+          <span class="chip">Every rejection explains why</span>
+        </div>
+        <a class="card-link" href="https://github.com/greatwes/ai-interview-screening-pipeline" target="_blank" rel="noopener">View source →</a>
+      </article>
 
       <div class="projects">
 
-        <article class="project project-feature">
-          <div class="project-body">
-            <div class="project-head">
-              <h3>Global Rate Limiter</h3>
-              <a class="project-link" href="https://github.com/greatwes/global-rate-limiter" target="_blank" rel="noopener">Source ↗</a>
-            </div>
-            <p>
-              Rate limiting as a service, built the way a systems-design interview wishes real code
-              looked. Every token-bucket decision runs inside a single atomic Redis Lua script —
-              no distributed locks, no over-admission under concurrency — while a separate,
-              eventually-consistent analytics pipeline streams usage into TimescaleDB for a live
-              client dashboard. Every dependency failure has a configured, deliberate degradation path.
-            </p>
-            <ul class="project-highlights">
-              <li>Sub-5ms p99 decision latency, one Redis round trip per check</li>
-              <li>Stateless instances — any number of replicas enforce one global limit</li>
-              <li>43 tests run against the real production Lua script with zero infrastructure</li>
-            </ul>
-            <div class="tags">
-              <span>Python</span><span>FastAPI</span><span>Redis</span><span>PostgreSQL</span>
-              <span>TimescaleDB</span><span>Docker</span><span>Prometheus</span><span>k6</span>
-            </div>
+        <article class="project">
+          <span class="tag">Backend · Systems design</span>
+          <h3>I built a rate limiter that makes every decision in under 5 milliseconds, even when the database is down.</h3>
+          <p>Token-bucket limiting backed by a single atomic Redis script, with a usage dashboard and a deliberate fallback for every dependency that can fail.</p>
+          <div class="chip-row">
+            <span class="chip">43 tests, zero live infra</span>
+            <span class="chip">Sub-5ms p99</span>
           </div>
+          <a class="card-link" href="https://github.com/greatwes/global-rate-limiter" target="_blank" rel="noopener">View source →</a>
         </article>
 
         <article class="project">
-          <div class="project-body">
-            <div class="project-head">
-              <h3>Biometric Attendance Pipeline</h3>
-              <a class="project-link" href="https://github.com/greatwes/biometric-attendance-pipeline" target="_blank" rel="noopener">Source ↗</a>
-            </div>
-            <p>
-              An always-on attendance system for a 24/7 operation with no on-site server to run it on.
-              A fingerprint terminal pushes punches straight to an automation layer, which writes
-              idempotent, injection-safe MERGE statements into a cloud warehouse behind a live
-              dashboard — plus a native Android companion app for on-device enrollment and admin.
-            </p>
-            <ul class="project-highlights">
-              <li>Zero dedicated servers — runs on automation + warehouse only</li>
-              <li>Idempotent MERGE design: a retried batch can never duplicate a punch</li>
-              <li>Two independent SQL-injection surfaces identified and closed</li>
-            </ul>
-            <div class="tags">
-              <span>Kotlin</span><span>Android</span><span>n8n</span><span>Snowflake</span><span>SQL</span>
-            </div>
+          <span class="tag">IoT · Data pipeline</span>
+          <h3>I built an attendance system that runs 24/7 with no server of its own.</h3>
+          <p>A fingerprint terminal pushes straight to an automation layer and a cloud warehouse, with an Android app for on-device enrollment.</p>
+          <div class="chip-row">
+            <span class="chip">Zero duplicate punches</span>
+            <span class="chip">2 injection paths closed</span>
           </div>
+          <a class="card-link" href="https://github.com/greatwes/biometric-attendance-pipeline" target="_blank" rel="noopener">View source →</a>
         </article>
 
         <article class="project">
-          <div class="project-body">
-            <div class="project-head">
-              <h3>AI Interview Screening Pipeline</h3>
-              <a class="project-link" href="https://github.com/greatwes/ai-interview-screening-pipeline" target="_blank" rel="noopener">Source ↗</a>
-            </div>
-            <p>
-              A three-stage AI recruiting funnel in n8n: an LLM scores resumes against the job
-              description, a voice AI agent conducts and transcribes a live phone screening
-              interview, and a third LLM call compares every remaining candidate head-to-head to
-              pick the best N — not just rank them independently.
-            </p>
-            <ul class="project-highlights">
-              <li>Every LLM call is schema-constrained — structured JSON out, no parsing guesswork</li>
-              <li>Transcript cleanup is deliberately conservative — fixes typos, never a wrong answer</li>
-              <li>Final round compares candidates to each other, not just against a rubric</li>
-            </ul>
-            <div class="tags">
-              <span>n8n</span><span>OpenAI</span><span>Vapi</span><span>Airtable</span><span>Gmail</span>
-            </div>
+          <span class="tag">Fintech · Automation</span>
+          <h3>I built a reconciliation system that catches every transaction twice: once live, once as a safety net.</h3>
+          <p>A signature-verified webhook for speed, plus a scheduled pull that re-asserts every transaction really landed, both writing through the same idempotent upsert.</p>
+          <div class="chip-row">
+            <span class="chip">HMAC-SHA512 verified</span>
+            <span class="chip">Idempotent by design</span>
           </div>
+          <a class="card-link" href="https://github.com/greatwes/payment-webhook-reconciliation" target="_blank" rel="noopener">View source →</a>
         </article>
 
         <article class="project">
-          <div class="project-body">
-            <div class="project-head">
-              <h3>Dataiku MCP Server</h3>
-              <a class="project-link" href="https://github.com/greatwes/dataiku-mcp-server" target="_blank" rel="noopener">Source ↗</a>
-            </div>
-            <p>
-              A Model Context Protocol server that gives an AI coding agent safe, deliberately scoped
-              access to a Dataiku DSS instance — generous read access to projects, flows, and recipes,
-              with write access gated behind an explicit opt-in flag and destructive operations left
-              out entirely, by design.
-            </p>
-            <ul class="project-highlights">
-              <li>Built directly on the vendor's official API client — no key held by a third party</li>
-              <li>No dataset row reads, no triggering, no deletes — ever</li>
-            </ul>
-            <div class="tags">
-              <span>Python</span><span>MCP</span><span>Dataiku API</span>
-            </div>
+          <span class="tag">Dev tooling · AI</span>
+          <h3>I built an MCP server so an AI agent can read a data platform without ever touching production data directly.</h3>
+          <p>Generous read access to projects and flows, writes gated behind an explicit flag, and no raw dataset rows allowed anywhere near the chat.</p>
+          <div class="chip-row">
+            <span class="chip">Read-heavy, write-gated</span>
+            <span class="chip">No deletes, ever</span>
           </div>
+          <a class="card-link" href="https://github.com/greatwes/dataiku-mcp-server" target="_blank" rel="noopener">View source →</a>
         </article>
 
         <article class="project">
-          <div class="project-body">
-            <div class="project-head">
-              <h3>Payment Webhook Reconciliation</h3>
-              <a class="project-link" href="https://github.com/greatwes/payment-webhook-reconciliation" target="_blank" rel="noopener">Source ↗</a>
-            </div>
-            <p>
-              Reconciles a payment provider's transactions two ways at once: a signature-verified
-              real-time webhook for speed, and a scheduled statement pull as a safety net for
-              whatever the webhook missed — both writing through the same idempotent upsert so
-              neither path can create a duplicate.
-            </p>
-            <ul class="project-highlights">
-              <li>HMAC-SHA512 verified over the raw body, compared with a timing-safe check</li>
-              <li>Dual push + pull design: webhook speed, scheduled-pull correctness guarantee</li>
-              <li>Upserts matched on the provider's own transaction reference</li>
-            </ul>
-            <div class="tags">
-              <span>n8n</span><span>Node crypto</span><span>Google Sheets</span><span>Squad API</span>
-            </div>
+          <span class="tag">Automation · Data</span>
+          <h3>I built a pipeline that won't call a submission delivered until it's actually counted the row in the warehouse.</h3>
+          <p>Moves training attendance from a spreadsheet to a warehouse through validation at every hop, built to fix a failure mode a sibling project hit first.</p>
+          <div class="chip-row">
+            <span class="chip">140+ tests</span>
+            <span class="chip">Verified, not assumed</span>
           </div>
+          <a class="card-link" href="https://github.com/greatwes/training-attendance-sync" target="_blank" rel="noopener">View source →</a>
         </article>
 
         <article class="project">
-          <div class="project-body">
-            <div class="project-head">
-              <h3>Training Attendance Sync</h3>
-              <a class="project-link" href="https://github.com/greatwes/training-attendance-sync" target="_blank" rel="noopener">Source ↗</a>
-            </div>
-            <p>
-              A validated, idempotent pipeline moving training-attendance data out of a spreadsheet,
-              through an automation layer, and into a warehouse — engineered specifically to fix a
-              sibling project's failure mode: nothing here is marked "delivered" until a row-count
-              query proves it actually landed.
-            </p>
-            <ul class="project-highlights">
-              <li>"Delivered" means row-count verified, never just an HTTP 200</li>
-              <li>No SQL is ever assembled from untrusted spreadsheet data</li>
-              <li>140+ automated tests spanning every layer of the pipeline</li>
-            </ul>
-            <div class="tags">
-              <span>Google Apps Script</span><span>n8n</span><span>Python</span><span>Snowflake</span>
-            </div>
+          <span class="tag">Internal tools · Automation</span>
+          <h3>I built a ticketing tool that lets a reviewer flag a bad transaction without ever touching the real spreadsheet.</h3>
+          <p>Raises a ticket, emails the right person automatically, and logs every write so a submission is never silently lost.</p>
+          <div class="chip-row">
+            <span class="chip">Session-based identity</span>
+            <span class="chip">No duplicate tickets</span>
           </div>
+          <a class="card-link" href="https://github.com/greatwes/transaction-reconciliation-ticketing" target="_blank" rel="noopener">View source →</a>
         </article>
 
         <article class="project">
-          <div class="project-body">
-            <div class="project-head">
-              <h3>Transaction Reconciliation Ticketing</h3>
-              <a class="project-link" href="https://github.com/greatwes/transaction-reconciliation-ticketing" target="_blank" rel="noopener">Source ↗</a>
-            </div>
-            <p>
-              A lightweight ticketing layer for financial reconciliation: reviewers flag mismatched
-              transactions without ever getting edit access to the underlying ledger, the right
-              branch officer is notified automatically, and every write is logged and re-verified so
-              a "successful" submission is never silently lost.
-            </p>
-            <ul class="project-highlights">
-              <li>Session-based identity — nobody types a name or email that could be spoofed</li>
-              <li>Duplicate-ticket prevention and anti-spoofing email design within platform limits</li>
-            </ul>
-            <div class="tags">
-              <span>Google Apps Script</span><span>HTML/CSS/JS</span>
-            </div>
+          <span class="tag">Automation · Notifications</span>
+          <h3>I built a notifier that emails someone a clean summary of their own submission the moment they send it.</h3>
+          <p>Turns a field survey response into an instant, personalized receipt, so a mistake gets caught while the numbers are still fresh.</p>
+          <div class="chip-row">
+            <span class="chip">Null-safe by design</span>
+            <span class="chip">Self-cleaning inbox</span>
           </div>
-        </article>
-
-        <article class="project">
-          <div class="project-body">
-            <div class="project-head">
-              <h3>Recon KPI Email Notifier</h3>
-              <a class="project-link" href="https://github.com/greatwes/recon-kpi-email-notifier" target="_blank" rel="noopener">Source ↗</a>
-            </div>
-            <p>
-              Turns a field cash-reconciliation survey submission into an instant, personalized
-              HTML receipt email — closing the loop on data-entry mistakes while the numbers are
-              still fresh, instead of surfacing a mismatch days later.
-            </p>
-            <ul class="project-highlights">
-              <li>Every field is null-safe — a skipped survey question can't crash the run</li>
-              <li>Looked up by the platform's own submitter identity, never a typed address</li>
-            </ul>
-            <div class="tags">
-              <span>n8n</span><span>KoBoToolbox</span><span>Google Sheets</span><span>Gmail</span>
-            </div>
-          </div>
+          <a class="card-link" href="https://github.com/greatwes/recon-kpi-email-notifier" target="_blank" rel="noopener">View source →</a>
         </article>
 
       </div>
     </div>
   </section>
 
-  <section class="section section-alt" id="about">
-    <div class="section-inner about-grid">
-      <div>
-        <h2 class="section-title"><span class="kicker">02</span> About</h2>
-        <p class="about-copy">
-          I work where clean software design meets operational reality: devices that can't be
-          trusted to send the same batch twice, automation platforms with no SQL binding parameters,
-          and spreadsheets standing in for a database because that's the tool everyone already knows.
-        </p>
-        <p class="about-copy">
-          The common thread across these projects is defensive engineering — idempotent writes,
-          verified delivery instead of assumed delivery, and tests that run without ever touching
-          real infrastructure. I'd rather a system fail loudly in a test than quietly in production.
-        </p>
-      </div>
-      <div class="about-card">
-        <p class="about-card-label">Currently focused on</p>
-        <ul class="about-list">
-          <li>Backend services &amp; APIs (Python / FastAPI)</li>
-          <li>Data pipelines &amp; warehouse integration (Snowflake, Dataiku, n8n)</li>
-          <li>Automation tooling for teams without a dedicated dev stack</li>
-          <li>Reliability — idempotency, graceful degradation, verified delivery</li>
-        </ul>
-      </div>
-    </div>
-  </section>
-
-  <section class="section" id="skills">
+  <section class="section" id="strengths">
     <div class="section-inner">
-      <h2 class="section-title"><span class="kicker">03</span> Skills</h2>
-      <div class="skills-grid">
-        <div class="skill-group">
-          <h3>Languages</h3>
-          <div class="tags"><span>Python</span><span>TypeScript / JavaScript</span><span>Kotlin</span><span>SQL</span><span>Google Apps Script</span></div>
+      <h2 class="section-title">Where I'm strongest.</h2>
+      <div class="strengths-grid">
+        <div class="strength">
+          <h3>Making unreliable things reliable</h3>
+          <p>Retries, idempotency, dead-letter handling. Things that can run twice without causing twice the damage.</p>
         </div>
-        <div class="skill-group">
-          <h3>Backend &amp; Infra</h3>
-          <div class="tags"><span>FastAPI</span><span>Docker</span><span>Redis</span><span>PostgreSQL</span><span>TimescaleDB</span><span>Prometheus / Grafana</span></div>
+        <div class="strength">
+          <h3>Designing for the failure, not just the happy path</h3>
+          <p>Every integration I build gets asked "what happens when this is down" before it gets asked "does this work."</p>
         </div>
-        <div class="skill-group">
-          <h3>Data &amp; Automation</h3>
-          <div class="tags"><span>Snowflake</span><span>Dataiku</span><span>n8n</span><span>ETL pipeline design</span></div>
+        <div class="strength">
+          <h3>Testing without touching real infrastructure</h3>
+          <p>If a test needs a live database or a live API to pass, it isn't a test I trust. Stub it, prove the logic, then verify for real once.</p>
         </div>
-        <div class="skill-group">
-          <h3>Practices</h3>
-          <div class="tags"><span>Idempotent system design</span><span>Injection-safe SQL</span><span>Testing without live infra</span><span>Graceful degradation</span></div>
+        <div class="strength">
+          <h3>Handing off something a non-engineer can run</h3>
+          <p>A system nobody but me can operate isn't finished. Documentation and a working README are part of the build, not an afterthought.</p>
         </div>
       </div>
     </div>
@@ -308,21 +248,12 @@
 
   <section class="section section-alt" id="contact">
     <div class="section-inner contact-inner">
-      <h2 class="section-title"><span class="kicker">04</span> Let's talk</h2>
-      <p class="section-sub">Open to backend, data platform, and automation engineering roles.</p>
-      <div class="contact-links">
-        <a class="contact-card" href="mailto:wesleyokoye@gmail.com">
-          <span class="contact-label">Email</span>
-          <span class="contact-value">wesleyokoye@gmail.com</span>
-        </a>
-        <a class="contact-card" href="https://www.linkedin.com/in/wesley-okoye/" target="_blank" rel="noopener">
-          <span class="contact-label">LinkedIn</span>
-          <span class="contact-value">in/wesley-okoye</span>
-        </a>
-        <a class="contact-card" href="https://github.com/greatwes" target="_blank" rel="noopener">
-          <span class="contact-label">GitHub</span>
-          <span class="contact-value">@greatwes</span>
-        </a>
+      <h2 class="section-title">Let's build something.</h2>
+      <p class="section-sub">If you've got a process held together by someone's memory and a spreadsheet, I'd like to hear about it. I usually reply within a day.</p>
+      <div class="contact-actions">
+        <a class="btn btn-primary" href="mailto:wesleyokoye@gmail.com">Send an email</a>
+        <a class="btn btn-ghost" href="https://www.linkedin.com/in/wesley-okoye/" target="_blank" rel="noopener">LinkedIn</a>
+        <a class="btn btn-ghost" href="https://github.com/greatwes" target="_blank" rel="noopener">GitHub</a>
       </div>
     </div>
   </section>
@@ -331,8 +262,8 @@
 
 <footer class="footer">
   <div class="section-inner footer-inner">
-    <span>© <span id="year"></span> Wesley Okoye</span>
-    <span class="footer-muted">Built with HTML, CSS &amp; a little JS — deployed on Netlify.</span>
+    <span>Wesley Okoye</span>
+    <span class="footer-muted">© <span id="year"></span>. All rights reserved.</span>
   </div>
 </footer>
 

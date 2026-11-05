@@ -16,9 +16,7 @@ document.querySelectorAll(".nav-links a").forEach((link) => {
 });
 
 // Scroll-reveal animation for cards
-const revealTargets = document.querySelectorAll(
-  ".project, .about-card, .contact-card, .skill-group"
-);
+const revealTargets = document.querySelectorAll(".project, .feature-card, .strength");
 
 if ("IntersectionObserver" in window) {
   const observer = new IntersectionObserver(
