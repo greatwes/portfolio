@@ -272,7 +272,7 @@ a { color: inherit; text-decoration: none; }
   border: 1px solid var(--surface-border);
   border-radius: var(--radius);
   overflow: hidden;
-  aspect-ratio: 899 / 1166;
+  aspect-ratio: 1100 / 1425;
   opacity: 0;
   transform: translateY(18px);
   animation: hero-in 0.7s cubic-bezier(.22,1,.36,1) forwards;
