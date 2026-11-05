@@ -144,21 +144,21 @@
   <section class="section section-alt" id="work">
     <div class="section-inner">
       <h2 class="section-title">Selected builds.</h2>
-      <p class="section-sub">Eight systems, all running the way they're described below. Source is public for every one of them.</p>
+      <p class="section-sub">Eight systems doing real work that nobody has to think about, until something breaks. Source is public for every one of them.</p>
 
       <p class="group-label">Software &amp; systems</p>
 
       <article class="feature-card">
-        <span class="tag">Android · Backend systems</span>
-        <h3 class="project-name">Biometric Attendance Pipeline</h3>
-        <p class="project-hook">A native Android app and backend pipeline running attendance for 500+ staff, with no dedicated server to keep alive.</p>
+        <span class="tag">Systems, field operations</span>
+        <h3 class="project-name">Biometric Attendance System</h3>
+        <p class="project-hook">500+ staff clock in every day on a system that has no server for anyone to babysit.</p>
         <p>
-          Staff clock in on a fingerprint terminal or on the Android app I built for enrollment
-          and admin. Every punch flows through an idempotent write path into a cloud warehouse,
-          so a batch the device retries can never double-count attendance, and a live dashboard
-          reads straight from that same data. I designed the device sync protocol, closed two
-          SQL-injection surfaces in the write path, and built a second sync layer so someone
-          enrolled on one terminal can check in on any other.
+          A fingerprint terminal pushes every punch straight into a cloud warehouse, and a native
+          Android app I built handles enrollment and admin on-site. Every write is idempotent, so
+          a terminal that retries a batch can never double-count attendance, and a live dashboard
+          reads from the same numbers the device just sent. I closed two SQL-injection surfaces
+          in the write path and built a second sync layer so someone enrolled on one terminal can
+          check in on any other, with no laptop or local server anywhere in the chain.
         </p>
         <div class="chip-row">
           <span class="chip">500+ staff</span>
@@ -171,10 +171,10 @@
       <div class="projects">
 
         <article class="project">
-          <span class="tag">Backend · Systems design</span>
-          <h3 class="project-name">Global Rate Limiter</h3>
-          <p class="project-hook">Every decision made in under 5 milliseconds, even when the database is down.</p>
-          <p>Token-bucket limiting backed by a single atomic Redis script, with a usage dashboard and a deliberate fallback for every dependency that can fail.</p>
+          <span class="tag">Backend, systems design</span>
+          <h3 class="project-name">RateGuard</h3>
+          <p class="project-hook">Decides who gets through in under 5 milliseconds, even on the day the database doesn't.</p>
+          <p>Token-bucket rate limiting backed by a single atomic Redis script, so concurrent requests can never slip past the limit. A usage dashboard shows every client their own traffic live, and every dependency that can fail has a deliberate fallback instead of a crash.</p>
           <div class="chip-row">
             <span class="chip">43 tests, zero live infra</span>
             <span class="chip">Sub-5ms p99</span>
@@ -183,10 +183,10 @@
         </article>
 
         <article class="project">
-          <span class="tag">Dev tooling · AI</span>
-          <h3 class="project-name">Dataiku MCP Server</h3>
-          <p class="project-hook">Lets an AI agent read a data platform without ever touching production data directly.</p>
-          <p>Generous read access to projects and flows, writes gated behind an explicit flag, and no raw dataset rows allowed anywhere near the chat.</p>
+          <span class="tag">Dev tooling, AI</span>
+          <h3 class="project-name">Dataiku Bridge</h3>
+          <p class="project-hook">Lets an AI agent read the data platform's shape, never its data.</p>
+          <p>An MCP server built directly on Dataiku's own API client, so no third party ever holds the key. It hands an AI coding agent generous read access to projects, flows and recipes, gates every write behind an explicit flag, and refuses to expose a single raw dataset row, on purpose.</p>
           <div class="chip-row">
             <span class="chip">Read-heavy, write-gated</span>
             <span class="chip">No deletes, ever</span>
@@ -201,10 +201,10 @@
       <div class="projects">
 
         <article class="project">
-          <span class="tag">AI · Recruiting</span>
-          <h3 class="project-name">AI Interview Screening Pipeline</h3>
-          <p class="project-hook">An AI screens the resume, interviews the candidate by voice, and picks the shortlist on its own.</p>
-          <p>A candidate applies, an LLM scores their resume, a voice AI agent runs the screening call, and a third LLM compares every remaining candidate head to head.</p>
+          <span class="tag">AI, recruiting</span>
+          <h3 class="project-name">AI Interview Screening System</h3>
+          <p class="project-hook">Screens the resume, calls the candidate, and ranks the shortlist, before a human opens a single CV.</p>
+          <p>An LLM scores every resume against the job description, and the ones who pass get an actual phone screening from a voice AI agent, not a form. A second LLM evaluates the conversation, and a third compares every finalist head to head to pick the strongest group, not just the highest individual scores. Every rejection comes with the real reason.</p>
           <div class="chip-row">
             <span class="chip">3 LLM stages</span>
             <span class="chip">Voice interviews via Vapi</span>
@@ -213,10 +213,10 @@
         </article>
 
         <article class="project">
-          <span class="tag">Fintech · Automation</span>
-          <h3 class="project-name">Payment Webhook Reconciliation</h3>
-          <p class="project-hook">Catches every transaction twice: once live, once as a safety net.</p>
-          <p>A signature-verified webhook for speed, plus a scheduled pull that re-asserts every transaction really landed, both writing through the same idempotent upsert.</p>
+          <span class="tag">Fintech, automation</span>
+          <h3 class="project-name">LedgerSync</h3>
+          <p class="project-hook">Catches every transaction twice, so a missed webhook never means a missed payment.</p>
+          <p>A signature-verified webhook records transactions the moment they happen, while a scheduled pull quietly re-checks the provider's full statement behind it. Both write through the same idempotent upsert keyed on the transaction reference, so nothing doubles up and nothing slips through.</p>
           <div class="chip-row">
             <span class="chip">HMAC-SHA512 verified</span>
             <span class="chip">Idempotent by design</span>
@@ -225,10 +225,10 @@
         </article>
 
         <article class="project">
-          <span class="tag">Automation · Data</span>
-          <h3 class="project-name">Training Attendance Sync</h3>
-          <p class="project-hook">Won't call a submission delivered until it's actually counted the row in the warehouse.</p>
-          <p>Moves training attendance from a spreadsheet to a warehouse through validation at every hop, built to fix a failure mode a sibling project hit first.</p>
+          <span class="tag">Automation, data</span>
+          <h3 class="project-name">TrainSync</h3>
+          <p class="project-hook">Never says "delivered" until the warehouse has actually counted the row.</p>
+          <p>Moves training attendance out of a spreadsheet and into a warehouse through validation at every hop, built to fix a failure mode a sibling project hit first: a push that returns 200 but never actually lands. Here, "delivered" is a query result, not an assumption.</p>
           <div class="chip-row">
             <span class="chip">140+ tests</span>
             <span class="chip">Verified, not assumed</span>
@@ -237,10 +237,10 @@
         </article>
 
         <article class="project">
-          <span class="tag">Internal tools · Automation</span>
-          <h3 class="project-name">Transaction Reconciliation Ticketing</h3>
-          <p class="project-hook">A reviewer flags a bad transaction without ever touching the real spreadsheet.</p>
-          <p>Raises a ticket, emails the right person automatically, and logs every write so a submission is never silently lost.</p>
+          <span class="tag">Internal tools, automation</span>
+          <h3 class="project-name">ReconDesk</h3>
+          <p class="project-hook">Lets a reviewer flag a bad transaction without ever being handed the keys to the ledger.</p>
+          <p>A reviewer raises a ticket on a mismatched transaction, the right branch officer gets emailed automatically, and every write is logged and re-verified, so a submission that looks successful is never quietly lost.</p>
           <div class="chip-row">
             <span class="chip">Session-based identity</span>
             <span class="chip">No duplicate tickets</span>
@@ -249,10 +249,10 @@
         </article>
 
         <article class="project">
-          <span class="tag">Automation · Notifications</span>
-          <h3 class="project-name">Recon KPI Email Notifier</h3>
-          <p class="project-hook">Emails someone a clean summary of their own submission the moment they send it.</p>
-          <p>Turns a field survey response into an instant, personalized receipt, so a mistake gets caught while the numbers are still fresh.</p>
+          <span class="tag">Automation, notifications</span>
+          <h3 class="project-name">InstantReceipt</h3>
+          <p class="project-hook">Emails a clean receipt back the moment the numbers are submitted, before a mistake can hide.</p>
+          <p>Turns a field cash-reconciliation survey into an instant, personalized HTML receipt, so a typo gets caught while the numbers are still fresh instead of surfacing as a mismatch days later. Every field is null-safe, so one skipped question can't take down the whole run.</p>
           <div class="chip-row">
             <span class="chip">Null-safe by design</span>
             <span class="chip">Self-cleaning inbox</span>
