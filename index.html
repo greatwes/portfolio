@@ -1,0 +1,274 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Wesley Okoye — Software Engineer</title>
+<meta name="description" content="Wesley Okoye — software engineer building data pipelines, automation systems, and backend services. Projects in Python, FastAPI, Redis, Snowflake, n8n, and Android." />
+
+<meta property="og:title" content="Wesley Okoye — Software Engineer" />
+<meta property="og:description" content="Data pipelines, automation systems, and backend services built for real-world constraints." />
+<meta property="og:type" content="website" />
+
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%2310b981'/%3E%3Ctext x='50' y='68' font-size='58' font-family='monospace' fill='%23061412' text-anchor='middle'%3EW%3C/text%3E%3C/svg%3E" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="nav" id="top">
+  <div class="nav-inner">
+    <a href="#top" class="brand">WO<span class="brand-dot">.</span></a>
+    <nav class="nav-links" id="navLinks">
+      <a href="#work">Work</a>
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#contact">Contact</a>
+      <a class="btn btn-ghost nav-cta" href="mailto:wesleyokoye@gmail.com">Say hello</a>
+    </nav>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="navLinks">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<main id="main">
+
+  <section class="hero">
+    <div class="hero-inner">
+      <p class="eyebrow">Software Engineer — Data &amp; Automation</p>
+      <h1>Wesley Okoye</h1>
+      <p class="hero-lede">
+        I build systems for the messy edges of real operations — unattended IoT pipelines that
+        can't rely on a server staying up, spreadsheet-driven workflows standing in for missing
+        tooling, and backend services engineered to degrade gracefully when a dependency fails
+        instead of taking everything down with it.
+      </p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="#work">View projects</a>
+        <a class="btn btn-ghost" href="https://github.com/greatwes" target="_blank" rel="noopener">GitHub ↗</a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat"><span class="stat-num">5</span><span class="stat-label">shipped systems</span></div>
+        <div class="stat"><span class="stat-num">300+</span><span class="stat-label">automated tests written</span></div>
+        <div class="stat"><span class="stat-num">0</span><span class="stat-label">single points of failure left on purpose</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="work">
+    <div class="section-inner">
+      <h2 class="section-title"><span class="kicker">01</span> Selected work</h2>
+      <p class="section-sub">Five systems, five different constraints — a rate limiter designed like a systems-design interview answer, an unattended biometric pipeline, a scoped MCP server, and two automation tools built to fail loudly instead of silently.</p>
+
+      <div class="projects">
+
+        <article class="project project-feature">
+          <div class="project-body">
+            <div class="project-head">
+              <h3>Global Rate Limiter</h3>
+              <a class="project-link" href="https://github.com/greatwes/global-rate-limiter" target="_blank" rel="noopener">Source ↗</a>
+            </div>
+            <p>
+              Rate limiting as a service, built the way a systems-design interview wishes real code
+              looked. Every token-bucket decision runs inside a single atomic Redis Lua script —
+              no distributed locks, no over-admission under concurrency — while a separate,
+              eventually-consistent analytics pipeline streams usage into TimescaleDB for a live
+              client dashboard. Every dependency failure has a configured, deliberate degradation path.
+            </p>
+            <ul class="project-highlights">
+              <li>Sub-5ms p99 decision latency, one Redis round trip per check</li>
+              <li>Stateless instances — any number of replicas enforce one global limit</li>
+              <li>43 tests run against the real production Lua script with zero infrastructure</li>
+            </ul>
+            <div class="tags">
+              <span>Python</span><span>FastAPI</span><span>Redis</span><span>PostgreSQL</span>
+              <span>TimescaleDB</span><span>Docker</span><span>Prometheus</span><span>k6</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="project">
+          <div class="project-body">
+            <div class="project-head">
+              <h3>Biometric Attendance Pipeline</h3>
+              <a class="project-link" href="https://github.com/greatwes/biometric-attendance-pipeline" target="_blank" rel="noopener">Source ↗</a>
+            </div>
+            <p>
+              An always-on attendance system for a 24/7 operation with no on-site server to run it on.
+              A fingerprint terminal pushes punches straight to an automation layer, which writes
+              idempotent, injection-safe MERGE statements into a cloud warehouse behind a live
+              dashboard — plus a native Android companion app for on-device enrollment and admin.
+            </p>
+            <ul class="project-highlights">
+              <li>Zero dedicated servers — runs on automation + warehouse only</li>
+              <li>Idempotent MERGE design: a retried batch can never duplicate a punch</li>
+              <li>Two independent SQL-injection surfaces identified and closed</li>
+            </ul>
+            <div class="tags">
+              <span>Kotlin</span><span>Android</span><span>n8n</span><span>Snowflake</span><span>SQL</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="project">
+          <div class="project-body">
+            <div class="project-head">
+              <h3>Dataiku MCP Server</h3>
+              <a class="project-link" href="https://github.com/greatwes/dataiku-mcp-server" target="_blank" rel="noopener">Source ↗</a>
+            </div>
+            <p>
+              A Model Context Protocol server that gives an AI coding agent safe, deliberately scoped
+              access to a Dataiku DSS instance — generous read access to projects, flows, and recipes,
+              with write access gated behind an explicit opt-in flag and destructive operations left
+              out entirely, by design.
+            </p>
+            <ul class="project-highlights">
+              <li>Built directly on the vendor's official API client — no key held by a third party</li>
+              <li>No dataset row reads, no triggering, no deletes — ever</li>
+            </ul>
+            <div class="tags">
+              <span>Python</span><span>MCP</span><span>Dataiku API</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="project">
+          <div class="project-body">
+            <div class="project-head">
+              <h3>Training Attendance Sync</h3>
+              <a class="project-link" href="https://github.com/greatwes/training-attendance-sync" target="_blank" rel="noopener">Source ↗</a>
+            </div>
+            <p>
+              A validated, idempotent pipeline moving training-attendance data out of a spreadsheet,
+              through an automation layer, and into a warehouse — engineered specifically to fix a
+              sibling project's failure mode: nothing here is marked "delivered" until a row-count
+              query proves it actually landed.
+            </p>
+            <ul class="project-highlights">
+              <li>"Delivered" means row-count verified, never just an HTTP 200</li>
+              <li>No SQL is ever assembled from untrusted spreadsheet data</li>
+              <li>140+ automated tests spanning every layer of the pipeline</li>
+            </ul>
+            <div class="tags">
+              <span>Google Apps Script</span><span>n8n</span><span>Python</span><span>Snowflake</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="project">
+          <div class="project-body">
+            <div class="project-head">
+              <h3>Transaction Reconciliation Ticketing</h3>
+              <a class="project-link" href="https://github.com/greatwes/transaction-reconciliation-ticketing" target="_blank" rel="noopener">Source ↗</a>
+            </div>
+            <p>
+              A lightweight ticketing layer for financial reconciliation: reviewers flag mismatched
+              transactions without ever getting edit access to the underlying ledger, the right
+              branch officer is notified automatically, and every write is logged and re-verified so
+              a "successful" submission is never silently lost.
+            </p>
+            <ul class="project-highlights">
+              <li>Session-based identity — nobody types a name or email that could be spoofed</li>
+              <li>Duplicate-ticket prevention and anti-spoofing email design within platform limits</li>
+            </ul>
+            <div class="tags">
+              <span>Google Apps Script</span><span>HTML/CSS/JS</span>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-alt" id="about">
+    <div class="section-inner about-grid">
+      <div>
+        <h2 class="section-title"><span class="kicker">02</span> About</h2>
+        <p class="about-copy">
+          I work where clean software design meets operational reality: devices that can't be
+          trusted to send the same batch twice, automation platforms with no SQL binding parameters,
+          and spreadsheets standing in for a database because that's the tool everyone already knows.
+        </p>
+        <p class="about-copy">
+          The common thread across these projects is defensive engineering — idempotent writes,
+          verified delivery instead of assumed delivery, and tests that run without ever touching
+          real infrastructure. I'd rather a system fail loudly in a test than quietly in production.
+        </p>
+      </div>
+      <div class="about-card">
+        <p class="about-card-label">Currently focused on</p>
+        <ul class="about-list">
+          <li>Backend services &amp; APIs (Python / FastAPI)</li>
+          <li>Data pipelines &amp; warehouse integration (Snowflake, Dataiku, n8n)</li>
+          <li>Automation tooling for teams without a dedicated dev stack</li>
+          <li>Reliability — idempotency, graceful degradation, verified delivery</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="skills">
+    <div class="section-inner">
+      <h2 class="section-title"><span class="kicker">03</span> Skills</h2>
+      <div class="skills-grid">
+        <div class="skill-group">
+          <h3>Languages</h3>
+          <div class="tags"><span>Python</span><span>TypeScript / JavaScript</span><span>Kotlin</span><span>SQL</span><span>Google Apps Script</span></div>
+        </div>
+        <div class="skill-group">
+          <h3>Backend &amp; Infra</h3>
+          <div class="tags"><span>FastAPI</span><span>Docker</span><span>Redis</span><span>PostgreSQL</span><span>TimescaleDB</span><span>Prometheus / Grafana</span></div>
+        </div>
+        <div class="skill-group">
+          <h3>Data &amp; Automation</h3>
+          <div class="tags"><span>Snowflake</span><span>Dataiku</span><span>n8n</span><span>ETL pipeline design</span></div>
+        </div>
+        <div class="skill-group">
+          <h3>Practices</h3>
+          <div class="tags"><span>Idempotent system design</span><span>Injection-safe SQL</span><span>Testing without live infra</span><span>Graceful degradation</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-alt" id="contact">
+    <div class="section-inner contact-inner">
+      <h2 class="section-title"><span class="kicker">04</span> Let's talk</h2>
+      <p class="section-sub">Open to backend, data platform, and automation engineering roles.</p>
+      <div class="contact-links">
+        <a class="contact-card" href="mailto:wesleyokoye@gmail.com">
+          <span class="contact-label">Email</span>
+          <span class="contact-value">wesleyokoye@gmail.com</span>
+        </a>
+        <a class="contact-card" href="https://www.linkedin.com/in/wesley-okoye/" target="_blank" rel="noopener">
+          <span class="contact-label">LinkedIn</span>
+          <span class="contact-value">in/wesley-okoye</span>
+        </a>
+        <a class="contact-card" href="https://github.com/greatwes" target="_blank" rel="noopener">
+          <span class="contact-label">GitHub</span>
+          <span class="contact-value">@greatwes</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <div class="section-inner footer-inner">
+    <span>© <span id="year"></span> Wesley Okoye</span>
+    <span class="footer-muted">Built with HTML, CSS &amp; a little JS — deployed on Netlify.</span>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
