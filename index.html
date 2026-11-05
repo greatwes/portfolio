@@ -3,11 +3,11 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Wesley Okoye | Software Engineer</title>
-<meta name="description" content="Wesley Okoye. Software engineer building data pipelines, AI automation and backend systems. Python, FastAPI, Redis, Snowflake, n8n, OpenAI and Android." />
+<title>Wesley Okoye</title>
+<meta name="description" content="Wesley Okoye. Backend systems, Android apps and the data pipelines that connect them. Python, FastAPI, Kotlin, Redis, Snowflake and OpenAI." />
 
-<meta property="og:title" content="Wesley Okoye | Software Engineer" />
-<meta property="og:description" content="Data pipelines, AI automation and backend systems built for real operations." />
+<meta property="og:title" content="Wesley Okoye" />
+<meta property="og:description" content="Backend systems, Android apps and the data pipelines that connect them." />
 <meta property="og:type" content="website" />
 <meta property="og:image" content="assets/wesley.jpg" />
 
@@ -43,13 +43,14 @@
   <section class="hero">
     <div class="hero-inner">
       <div class="hero-copy">
-        <p class="eyebrow">Software engineer</p>
         <h1>Wesley Okoye</h1>
-        <p class="hero-role">Data pipelines &amp; automation that hold up under real use.</p>
+        <p class="hero-role">Backend systems, Android apps, and the data pipelines that connect them.</p>
         <p class="hero-lede">
-          I build the systems that keep running when nobody's watching them: biometric attendance
-          pipelines, payment reconciliation, AI hiring flows. Most of what I ship is the kind of
-          work that only gets noticed when it breaks, so I try hard to make sure it doesn't.
+          I write the software that keeps running when nobody's watching it, like a staff
+          attendance platform covering 500+ people, a rate limiter that decides in under 5
+          milliseconds, and an AI hiring pipeline that screens, interviews, and shortlists on its
+          own. Most of what I build only gets noticed when it breaks, so I try hard to make sure
+          it doesn't.
         </p>
         <div class="hero-actions">
           <a class="btn btn-primary" href="#work">See my work</a>
@@ -125,22 +126,26 @@
       <h2 class="section-title">Selected builds.</h2>
       <p class="section-sub">Eight systems, all running the way they're described below. Source is public for every one of them.</p>
 
+      <p class="group-label">Software &amp; systems</p>
+
       <article class="feature-card">
-        <span class="tag">AI · Recruiting</span>
-        <h3 class="project-name">AI Interview Screening Pipeline</h3>
-        <p class="project-hook">An AI screens the resume, interviews the candidate by voice, and picks the shortlist on its own.</p>
+        <span class="tag">Android · Backend systems</span>
+        <h3 class="project-name">Biometric Attendance Pipeline</h3>
+        <p class="project-hook">A native Android app and backend pipeline running attendance for 500+ staff, with no dedicated server to keep alive.</p>
         <p>
-          A candidate applies, an LLM scores their resume against the job description, and if
-          they pass, a voice AI agent calls them for a short screening interview. A second LLM
-          evaluates the transcript, and a third compares every remaining candidate head to head
-          to pick the best ones, not just the highest scorers in isolation.
+          Staff clock in on a fingerprint terminal or on the Android app I built for enrollment
+          and admin. Every punch flows through an idempotent write path into a cloud warehouse,
+          so a batch the device retries can never double-count attendance, and a live dashboard
+          reads straight from that same data. I designed the device sync protocol, closed two
+          SQL-injection surfaces in the write path, and built a second sync layer so someone
+          enrolled on one terminal can check in on any other.
         </p>
         <div class="chip-row">
-          <span class="chip">3 LLM stages</span>
-          <span class="chip">Voice interviews via Vapi</span>
-          <span class="chip">Every rejection explains why</span>
+          <span class="chip">500+ staff</span>
+          <span class="chip">Native Android app, Kotlin</span>
+          <span class="chip">Zero duplicate punches</span>
         </div>
-        <a class="card-link" href="https://github.com/greatwes/ai-interview-screening-pipeline" target="_blank" rel="noopener">View source →</a>
+        <a class="card-link" href="https://github.com/greatwes/biometric-attendance-pipeline" target="_blank" rel="noopener">View source →</a>
       </article>
 
       <div class="projects">
@@ -158,15 +163,33 @@
         </article>
 
         <article class="project">
-          <span class="tag">IoT · Data pipeline</span>
-          <h3 class="project-name">Biometric Attendance Pipeline</h3>
-          <p class="project-hook">Runs 24/7 with no server of its own to babysit.</p>
-          <p>A fingerprint terminal pushes straight to an automation layer and a cloud warehouse, with an Android app for on-device enrollment.</p>
+          <span class="tag">Dev tooling · AI</span>
+          <h3 class="project-name">Dataiku MCP Server</h3>
+          <p class="project-hook">Lets an AI agent read a data platform without ever touching production data directly.</p>
+          <p>Generous read access to projects and flows, writes gated behind an explicit flag, and no raw dataset rows allowed anywhere near the chat.</p>
           <div class="chip-row">
-            <span class="chip">Zero duplicate punches</span>
-            <span class="chip">2 injection paths closed</span>
+            <span class="chip">Read-heavy, write-gated</span>
+            <span class="chip">No deletes, ever</span>
           </div>
-          <a class="card-link" href="https://github.com/greatwes/biometric-attendance-pipeline" target="_blank" rel="noopener">View source →</a>
+          <a class="card-link" href="https://github.com/greatwes/dataiku-mcp-server" target="_blank" rel="noopener">View source →</a>
+        </article>
+
+      </div>
+
+      <p class="group-label group-label-spaced">Automation &amp; AI workflows</p>
+
+      <div class="projects">
+
+        <article class="project">
+          <span class="tag">AI · Recruiting</span>
+          <h3 class="project-name">AI Interview Screening Pipeline</h3>
+          <p class="project-hook">An AI screens the resume, interviews the candidate by voice, and picks the shortlist on its own.</p>
+          <p>A candidate applies, an LLM scores their resume, a voice AI agent runs the screening call, and a third LLM compares every remaining candidate head to head.</p>
+          <div class="chip-row">
+            <span class="chip">3 LLM stages</span>
+            <span class="chip">Voice interviews via Vapi</span>
+          </div>
+          <a class="card-link" href="https://github.com/greatwes/ai-interview-screening-pipeline" target="_blank" rel="noopener">View source →</a>
         </article>
 
         <article class="project">
@@ -179,18 +202,6 @@
             <span class="chip">Idempotent by design</span>
           </div>
           <a class="card-link" href="https://github.com/greatwes/payment-webhook-reconciliation" target="_blank" rel="noopener">View source →</a>
-        </article>
-
-        <article class="project">
-          <span class="tag">Dev tooling · AI</span>
-          <h3 class="project-name">Dataiku MCP Server</h3>
-          <p class="project-hook">Lets an AI agent read a data platform without ever touching production data directly.</p>
-          <p>Generous read access to projects and flows, writes gated behind an explicit flag, and no raw dataset rows allowed anywhere near the chat.</p>
-          <div class="chip-row">
-            <span class="chip">Read-heavy, write-gated</span>
-            <span class="chip">No deletes, ever</span>
-          </div>
-          <a class="card-link" href="https://github.com/greatwes/dataiku-mcp-server" target="_blank" rel="noopener">View source →</a>
         </article>
 
         <article class="project">
