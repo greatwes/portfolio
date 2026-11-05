@@ -4,10 +4,10 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Wesley Okoye — Software Engineer</title>
-<meta name="description" content="Wesley Okoye — software engineer building data pipelines, automation systems, and backend services. Projects in Python, FastAPI, Redis, Snowflake, n8n, and Android." />
+<meta name="description" content="Wesley Okoye — software engineer building data pipelines, AI automation, and backend services. Projects in Python, FastAPI, Redis, Snowflake, n8n, OpenAI, and Android." />
 
 <meta property="og:title" content="Wesley Okoye — Software Engineer" />
-<meta property="og:description" content="Data pipelines, automation systems, and backend services built for real-world constraints." />
+<meta property="og:description" content="Data pipelines, AI automation, and backend services built for real-world constraints." />
 <meta property="og:type" content="website" />
 
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%2310b981'/%3E%3Ctext x='50' y='68' font-size='58' font-family='monospace' fill='%23061412' text-anchor='middle'%3EW%3C/text%3E%3C/svg%3E" />
@@ -55,7 +55,7 @@
         <a class="btn btn-ghost" href="https://github.com/greatwes" target="_blank" rel="noopener">GitHub ↗</a>
       </div>
       <div class="hero-stats">
-        <div class="stat"><span class="stat-num">5</span><span class="stat-label">shipped systems</span></div>
+        <div class="stat"><span class="stat-num">8</span><span class="stat-label">shipped systems</span></div>
         <div class="stat"><span class="stat-num">300+</span><span class="stat-label">automated tests written</span></div>
         <div class="stat"><span class="stat-num">0</span><span class="stat-label">single points of failure left on purpose</span></div>
       </div>
@@ -65,7 +65,7 @@
   <section class="section" id="work">
     <div class="section-inner">
       <h2 class="section-title"><span class="kicker">01</span> Selected work</h2>
-      <p class="section-sub">Five systems, five different constraints — a rate limiter designed like a systems-design interview answer, an unattended biometric pipeline, a scoped MCP server, and two automation tools built to fail loudly instead of silently.</p>
+      <p class="section-sub">A rate limiter designed like a systems-design interview answer, an unattended biometric pipeline, an AI recruiting funnel, a signature-verified payment reconciler, a scoped MCP server, and automations built to fail loudly instead of silently.</p>
 
       <div class="projects">
 
@@ -120,6 +120,29 @@
         <article class="project">
           <div class="project-body">
             <div class="project-head">
+              <h3>AI Interview Screening Pipeline</h3>
+              <a class="project-link" href="https://github.com/greatwes/ai-interview-screening-pipeline" target="_blank" rel="noopener">Source ↗</a>
+            </div>
+            <p>
+              A three-stage AI recruiting funnel in n8n: an LLM scores resumes against the job
+              description, a voice AI agent conducts and transcribes a live phone screening
+              interview, and a third LLM call compares every remaining candidate head-to-head to
+              pick the best N — not just rank them independently.
+            </p>
+            <ul class="project-highlights">
+              <li>Every LLM call is schema-constrained — structured JSON out, no parsing guesswork</li>
+              <li>Transcript cleanup is deliberately conservative — fixes typos, never a wrong answer</li>
+              <li>Final round compares candidates to each other, not just against a rubric</li>
+            </ul>
+            <div class="tags">
+              <span>n8n</span><span>OpenAI</span><span>Vapi</span><span>Airtable</span><span>Gmail</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="project">
+          <div class="project-body">
+            <div class="project-head">
               <h3>Dataiku MCP Server</h3>
               <a class="project-link" href="https://github.com/greatwes/dataiku-mcp-server" target="_blank" rel="noopener">Source ↗</a>
             </div>
@@ -135,6 +158,29 @@
             </ul>
             <div class="tags">
               <span>Python</span><span>MCP</span><span>Dataiku API</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="project">
+          <div class="project-body">
+            <div class="project-head">
+              <h3>Payment Webhook Reconciliation</h3>
+              <a class="project-link" href="https://github.com/greatwes/payment-webhook-reconciliation" target="_blank" rel="noopener">Source ↗</a>
+            </div>
+            <p>
+              Reconciles a payment provider's transactions two ways at once: a signature-verified
+              real-time webhook for speed, and a scheduled statement pull as a safety net for
+              whatever the webhook missed — both writing through the same idempotent upsert so
+              neither path can create a duplicate.
+            </p>
+            <ul class="project-highlights">
+              <li>HMAC-SHA512 verified over the raw body, compared with a timing-safe check</li>
+              <li>Dual push + pull design: webhook speed, scheduled-pull correctness guarantee</li>
+              <li>Upserts matched on the provider's own transaction reference</li>
+            </ul>
+            <div class="tags">
+              <span>n8n</span><span>Node crypto</span><span>Google Sheets</span><span>Squad API</span>
             </div>
           </div>
         </article>
@@ -180,6 +226,27 @@
             </ul>
             <div class="tags">
               <span>Google Apps Script</span><span>HTML/CSS/JS</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="project">
+          <div class="project-body">
+            <div class="project-head">
+              <h3>Recon KPI Email Notifier</h3>
+              <a class="project-link" href="https://github.com/greatwes/recon-kpi-email-notifier" target="_blank" rel="noopener">Source ↗</a>
+            </div>
+            <p>
+              Turns a field cash-reconciliation survey submission into an instant, personalized
+              HTML receipt email — closing the loop on data-entry mistakes while the numbers are
+              still fresh, instead of surfacing a mismatch days later.
+            </p>
+            <ul class="project-highlights">
+              <li>Every field is null-safe — a skipped survey question can't crash the run</li>
+              <li>Looked up by the platform's own submitter identity, never a typed address</li>
+            </ul>
+            <div class="tags">
+              <span>n8n</span><span>KoBoToolbox</span><span>Google Sheets</span><span>Gmail</span>
             </div>
           </div>
         </article>
