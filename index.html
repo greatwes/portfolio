@@ -11,7 +11,7 @@
 <meta property="og:type" content="website" />
 <meta property="og:image" content="assets/wesley.jpg" />
 
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%23e2932f'/%3E%3Ctext x='50' y='68' font-size='58' font-family='monospace' fill='%231a1206' text-anchor='middle'%3EW%3C/text%3E%3C/svg%3E" />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%23675bf2'/%3E%3Ctext x='50' y='68' font-size='58' font-family='monospace' fill='%23ffffff' text-anchor='middle'%3EW%3C/text%3E%3C/svg%3E" />
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -29,7 +29,7 @@
     <nav class="nav-links" id="navLinks">
       <a href="#work">Work</a>
       <a href="#stack">Stack</a>
-      <a href="#about">About</a>
+      <a href="#story">Story</a>
       <a href="#contact">Contact</a>
     </nav>
     <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="navLinks">
@@ -43,21 +43,24 @@
   <section class="hero">
     <div class="hero-inner">
       <div class="hero-copy">
-        <p class="eyebrow">Software engineer, data &amp; automation</p>
-        <h1>Hi, I'm Wesley.</h1>
+        <p class="eyebrow">Software engineer</p>
+        <h1>Wesley Okoye</h1>
+        <p class="hero-role">Data pipelines &amp; automation that hold up under real use.</p>
         <p class="hero-lede">
           I build the systems that keep running when nobody's watching them: biometric attendance
           pipelines, payment reconciliation, AI hiring flows. Most of what I ship is the kind of
           work that only gets noticed when it breaks, so I try hard to make sure it doesn't.
         </p>
-        <p class="hero-note">Open to new opportunities.</p>
         <div class="hero-actions">
           <a class="btn btn-primary" href="#work">See my work</a>
           <a class="btn btn-ghost" href="#contact">Get in touch</a>
         </div>
       </div>
-      <div class="hero-photo">
-        <img src="assets/wesley.jpg" alt="Portrait of Wesley Okoye" width="899" height="1166" />
+      <div class="hero-photo-wrap">
+        <div class="hero-photo">
+          <img src="assets/wesley.jpg" alt="Portrait of Wesley Okoye" width="899" height="1166" />
+        </div>
+        <span class="hero-badge">Open to work</span>
       </div>
     </div>
     <div class="hero-stats">
@@ -67,9 +70,9 @@
     </div>
   </section>
 
-  <section class="section" id="about">
+  <section class="section" id="story">
     <div class="section-inner about-inner">
-      <h2 class="section-title">The background.</h2>
+      <h2 class="section-title">A little context.</h2>
       <div class="about-copy">
         <p>
           I didn't start out building payment reconciliation systems or AI recruiting pipelines.
@@ -92,8 +95,8 @@
 
   <section class="section marquee-section" id="stack">
     <div class="section-inner">
-      <h2 class="section-title">Tools I build with.</h2>
-      <p class="section-sub">The languages, platforms and APIs behind most of what's below.</p>
+      <h2 class="section-title">The toolbox.</h2>
+      <p class="section-sub">What actually shows up in the commits below, on rotation.</p>
     </div>
     <div class="marquee" data-speed="slow">
       <div class="marquee-track">
@@ -119,12 +122,13 @@
 
   <section class="section section-alt" id="work">
     <div class="section-inner">
-      <h2 class="section-title">Things I've built.</h2>
+      <h2 class="section-title">Selected builds.</h2>
       <p class="section-sub">Eight systems, all running the way they're described below. Source is public for every one of them.</p>
 
       <article class="feature-card">
         <span class="tag">AI · Recruiting</span>
-        <h3>I built a hiring funnel where an AI screens the resume, interviews the candidate by voice, and picks the shortlist.</h3>
+        <h3 class="project-name">AI Interview Screening Pipeline</h3>
+        <p class="project-hook">An AI screens the resume, interviews the candidate by voice, and picks the shortlist on its own.</p>
         <p>
           A candidate applies, an LLM scores their resume against the job description, and if
           they pass, a voice AI agent calls them for a short screening interview. A second LLM
@@ -143,7 +147,8 @@
 
         <article class="project">
           <span class="tag">Backend · Systems design</span>
-          <h3>I built a rate limiter that makes every decision in under 5 milliseconds, even when the database is down.</h3>
+          <h3 class="project-name">Global Rate Limiter</h3>
+          <p class="project-hook">Every decision made in under 5 milliseconds, even when the database is down.</p>
           <p>Token-bucket limiting backed by a single atomic Redis script, with a usage dashboard and a deliberate fallback for every dependency that can fail.</p>
           <div class="chip-row">
             <span class="chip">43 tests, zero live infra</span>
@@ -154,7 +159,8 @@
 
         <article class="project">
           <span class="tag">IoT · Data pipeline</span>
-          <h3>I built an attendance system that runs 24/7 with no server of its own.</h3>
+          <h3 class="project-name">Biometric Attendance Pipeline</h3>
+          <p class="project-hook">Runs 24/7 with no server of its own to babysit.</p>
           <p>A fingerprint terminal pushes straight to an automation layer and a cloud warehouse, with an Android app for on-device enrollment.</p>
           <div class="chip-row">
             <span class="chip">Zero duplicate punches</span>
@@ -165,7 +171,8 @@
 
         <article class="project">
           <span class="tag">Fintech · Automation</span>
-          <h3>I built a reconciliation system that catches every transaction twice: once live, once as a safety net.</h3>
+          <h3 class="project-name">Payment Webhook Reconciliation</h3>
+          <p class="project-hook">Catches every transaction twice: once live, once as a safety net.</p>
           <p>A signature-verified webhook for speed, plus a scheduled pull that re-asserts every transaction really landed, both writing through the same idempotent upsert.</p>
           <div class="chip-row">
             <span class="chip">HMAC-SHA512 verified</span>
@@ -176,7 +183,8 @@
 
         <article class="project">
           <span class="tag">Dev tooling · AI</span>
-          <h3>I built an MCP server so an AI agent can read a data platform without ever touching production data directly.</h3>
+          <h3 class="project-name">Dataiku MCP Server</h3>
+          <p class="project-hook">Lets an AI agent read a data platform without ever touching production data directly.</p>
           <p>Generous read access to projects and flows, writes gated behind an explicit flag, and no raw dataset rows allowed anywhere near the chat.</p>
           <div class="chip-row">
             <span class="chip">Read-heavy, write-gated</span>
@@ -187,7 +195,8 @@
 
         <article class="project">
           <span class="tag">Automation · Data</span>
-          <h3>I built a pipeline that won't call a submission delivered until it's actually counted the row in the warehouse.</h3>
+          <h3 class="project-name">Training Attendance Sync</h3>
+          <p class="project-hook">Won't call a submission delivered until it's actually counted the row in the warehouse.</p>
           <p>Moves training attendance from a spreadsheet to a warehouse through validation at every hop, built to fix a failure mode a sibling project hit first.</p>
           <div class="chip-row">
             <span class="chip">140+ tests</span>
@@ -198,7 +207,8 @@
 
         <article class="project">
           <span class="tag">Internal tools · Automation</span>
-          <h3>I built a ticketing tool that lets a reviewer flag a bad transaction without ever touching the real spreadsheet.</h3>
+          <h3 class="project-name">Transaction Reconciliation Ticketing</h3>
+          <p class="project-hook">A reviewer flags a bad transaction without ever touching the real spreadsheet.</p>
           <p>Raises a ticket, emails the right person automatically, and logs every write so a submission is never silently lost.</p>
           <div class="chip-row">
             <span class="chip">Session-based identity</span>
@@ -209,7 +219,8 @@
 
         <article class="project">
           <span class="tag">Automation · Notifications</span>
-          <h3>I built a notifier that emails someone a clean summary of their own submission the moment they send it.</h3>
+          <h3 class="project-name">Recon KPI Email Notifier</h3>
+          <p class="project-hook">Emails someone a clean summary of their own submission the moment they send it.</p>
           <p>Turns a field survey response into an instant, personalized receipt, so a mistake gets caught while the numbers are still fresh.</p>
           <div class="chip-row">
             <span class="chip">Null-safe by design</span>
@@ -224,7 +235,7 @@
 
   <section class="section" id="strengths">
     <div class="section-inner">
-      <h2 class="section-title">Where I'm strongest.</h2>
+      <h2 class="section-title">How I work.</h2>
       <div class="strengths-grid">
         <div class="strength">
           <h3>Making unreliable things reliable</h3>
@@ -248,8 +259,8 @@
 
   <section class="section section-alt" id="contact">
     <div class="section-inner contact-inner">
-      <h2 class="section-title">Let's build something.</h2>
-      <p class="section-sub">If you've got a process held together by someone's memory and a spreadsheet, I'd like to hear about it. I usually reply within a day.</p>
+      <h2 class="section-title">Got a process that needs fixing?</h2>
+      <p class="section-sub">If it's held together by someone's memory and a spreadsheet, I'd like to hear about it. I usually reply within a day.</p>
       <div class="contact-actions">
         <a class="btn btn-primary" href="mailto:wesleyokoye@gmail.com">Send an email</a>
         <a class="btn btn-ghost" href="https://www.linkedin.com/in/wesley-okoye/" target="_blank" rel="noopener">LinkedIn</a>
