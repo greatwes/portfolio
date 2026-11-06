@@ -113,7 +113,7 @@ if (window.matchMedia("(hover: hover) and (pointer: fine)").matches) {
 
 // ---------- Staggered on-appear reveal ----------
 const revealSelector =
-  ".section-title, .section-sub, .group-label, .project, .feature-card, .strength, .about-copy p, .stat";
+  ".section-title, .section-sub, .group-label, .project, .feature-card, .strength, .about-copy p, .stat, .about-photo";
 const revealTargets = Array.from(document.querySelectorAll(revealSelector));
 
 revealTargets.forEach((el) => {
